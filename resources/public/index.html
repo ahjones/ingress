@@ -4,26 +4,73 @@
      <title>Ingress Invites</title>
      <link href="css/bootstrap.css" rel="stylesheet">
      <style type="text/css">
-       body { padding-top: 60px; padding-bottom: 40px; }
+
      </style>
   </head>
   <body>
-
-    <div class="container">
-      <h1>Ingress Invites</h1>
-
-      <form class="form-inline">
-        <fieldset>
-          <input type="text" id="email" placeholder="Your email" class="input">
-          <button type="submit" id="add-email-button" class="btn">Sign up</button>
-        </fieldset>
-      </form>
-      <div id="thanks"></div>
-
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li class="active"><a href="#">Request</a></li>
+          <li><a href="give.html">Give</a></li>
+        </ul>
+      </div>
     </div>
+      <header class="jumbotron">
+        <div class="container">
+          <h1>Ingress Invites</h1>
+          <p class="lead">Share your Google Ingress invitations</p>
+        </div>
+      </header>
 
-    <script type="text/javascript" src="ingress.js"></script>
-    <script type="text/javascript">ingressinvites.index.main();</script>
+      <div class="container">
+
+
+        <div class="span4 offset2">
+
+            <form class="form-inline">
+              <fieldset>
+                <input type="text" id="email" placeholder="Your email" class="input">
+                <button type="submit" id="add-email-button" class="btn">Sign up</button>
+              </fieldset>
+            </form>
+
+            <div id="thanks"></div>
+            <div class="video">
+            <iframe width="300" src="http://www.youtube.com/embed/92rYjlxqypM?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+        </div>
+        <div class="span4">
+
+          <a href="http://ingress.com">Google Ingress</a> is here. Don't
+          get left out, sign up now to share invitation codes.
+
+          <h2>How it works</h2>
+
+          <p>
+          <a href="http://IngressInvites.com">IngresInvites.com</a> is
+          an invitation exchange site. Type your email address into the
+          box on the left and click 'Sign up' to join the invitation
+          waiting list.
+          </p>
+
+          <p>
+          When you get to the front of the queue we'll send you an
+          invitation code. You'll be able to use the invitation code to
+          sign up to the game.
+          </p>
+
+          <p>
+          Google will give game players invitaitons to share with their
+          friends. When they give you an invitation code you come back
+          here and share them with others.
+          </p>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="ingress.js"></script>
+      <script type="text/javascript">ingressinvites.index.main();</script>
 
 <script type="text/javascript">
 
