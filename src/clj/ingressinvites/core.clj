@@ -22,10 +22,22 @@
     (rotary/put-item cred "ingress-waiting" {"id" id "email" email "time" time})
     {:id id}))
 
+(defn- add-invitation [req]
+  (let [body (get-body req)
+        id (.toString (java.util.UUID/randomUUID))
+        invitation (:invitation body)
+        time (System/currentTimeMillis)]
+    (rotary/put-item cred "ingress-waiting" {"id" id "invitation" invitation})
+    {:id id}))
+
+
 (compojure/defroutes handler
   (compojure/POST "/hopeful/" [:as request]
                   {:status 201
                    :body (cheshire/generate-string (add-hopeful request))})
+  (compojure/POST "/invitation/" [:as request]
+                  {:status 201
+                   :body (cheshire/generate-string (add-invitation request))})
   (compojure/GET "/" [] {:status 301 :headers {"Location" "/index.html"}})
   (route/resources "/"))
 

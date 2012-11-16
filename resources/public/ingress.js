@@ -16127,3 +16127,18 @@ ingressinvites.index.main = function() {
   return goog.events.listen(goog.dom.getElement("add-email-button"), "click", ingressinvites.index.add_email)
 };
 goog.exportSymbol("ingressinvites.index.main", ingressinvites.index.main);
+ingressinvites.give = {};
+ingressinvites.give.add_invitation_callback = function() {
+  return goog.dom.getElement("thanks").innerHTML = '<div class="alert">Thank you.</div>'
+};
+ingressinvites.give.get_dom_value = function(a) {
+  return goog.dom.getElement(a).value
+};
+ingressinvites.give.add_invitation = function(a) {
+  goog.net.XhrIo.send("/invitation/", ingressinvites.give.add_invitation_callback, "POST", [cljs.core.str('{"invitation":"'), cljs.core.str(ingressinvites.give.get_dom_value.call(null, "invitation")), cljs.core.str('"}')].join(""));
+  return a.preventDefault()
+};
+ingressinvites.give.main = function() {
+  return goog.events.listen(goog.dom.getElement("add-invitation-button"), "click", ingressinvites.give.add_invitation)
+};
+goog.exportSymbol("ingressinvites.give.main", ingressinvites.give.main);

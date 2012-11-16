@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Ingress Invites</title>
+     <link href="css/bootstrap.css" rel="stylesheet">
+     <style type="text/css">
+
+     </style>
+  </head>
+  <body>
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="index.html">Request</a></li>
+          <li class="active"><a href="#">Give</a></li>
+        </ul>
+      </div>
+    </div>
+      <header class="jumbotron">
+        <div class="container">
+          <h1>Ingress Invites</h1>
+          <p class="lead">Share your Google Ingress invitations</p>
+        </div>
+      </header>
+
+      <div class="container">
+
+
+        <div>
+
+            <form class="form-inline">
+              <fieldset>
+                <input type="text" id="invitation" placeholder="Invitation code" class="input-xxlarge">
+                <button type="submit" id="add-invitation-button" class="btn btn-large btn-primary">Share</button>
+              </fieldset>
+            </form>
+
+            <div id="thanks"></div>
+
+          Thanks for sharing your invitation code with future players.
+        </div>
+      </div>
+
+      <script type="text/javascript" src="ingress.js"></script>
+      <script type="text/javascript">ingressinvites.give.main();</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36403543-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
