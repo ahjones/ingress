@@ -27,7 +27,7 @@
         id (.toString (java.util.UUID/randomUUID))
         invitation (:invitation body)
         time (System/currentTimeMillis)]
-    (rotary/put-item cred "ingress-waiting" {"id" id "invitation" invitation})
+    (rotary/put-item cred "ingress-keys" {"id" id "invitation" invitation})
     {:id id}))
 
 
