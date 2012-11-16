@@ -6,7 +6,7 @@
 
 (defn add-email-callback [message]
   (set! (.-innerHTML (dom/getElement "thanks"))
-        "Thanks"))
+        "<div class=\"alert\">Thanks: your email address has been registered.</div>"))
 
 (defn get-dom-value
   [id]

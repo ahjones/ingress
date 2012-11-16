@@ -19,7 +19,8 @@
         id (.toString (java.util.UUID/randomUUID))
         email (:email body)
         time (System/currentTimeMillis)]
-    (rotary/put-item cred "ingress-waiting" {"id" id "email" email "time" time})))
+    (rotary/put-item cred "ingress-waiting" {"id" id "email" email "time" time})
+    {:id id}))
 
 (compojure/defroutes handler
   (compojure/POST "/hopeful/" [:as request]
