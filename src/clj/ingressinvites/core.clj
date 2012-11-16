@@ -3,11 +3,12 @@
             [compojure.route :as route]
             [cheshire.core :as cheshire]
             [rotary.client :as rotary]
-            [ring.adapter.jetty :as jetty])
+            [ring.adapter.jetty :as jetty]
+            [environ.core :refer [env]])
   (:gen-class))
 
-(def cred {:access-key ""
-           :secret-key ""})
+(def cred {:access-key (env :aws-access-key)
+           :secret-key (env :aws-secret-key)})
 
 (defn- get-body [req]
   (cheshire/parse-string (slurp (:body req)) true))
