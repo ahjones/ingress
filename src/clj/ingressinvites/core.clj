@@ -2,7 +2,9 @@
   (:require [compojure.core :as compojure]
             [compojure.route :as route]
             [cheshire.core :as cheshire]
-            [rotary.client :as rotary]))
+            [rotary.client :as rotary]
+            [ring.adapter.jetty :as jetty])
+  (:gen-class))
 
 (def cred {:access-key ""
            :secret-key ""})
@@ -23,3 +25,7 @@
                    :body (cheshire/generate-string (add-hopeful request))})
   (compojure/GET "/" [] {:status 301 :headers {"Location" "/index.html"}})
   (route/resources "/"))
+
+
+(defn -main [port]
+  (jetty/run-jetty handler {:port (Integer. port)}))
