@@ -8,7 +8,8 @@
   (:gen-class))
 
 (def cred {:access-key (env :aws-access-key)
-           :secret-key (env :aws-secret-key)})
+           :secret-key (env :aws-secret-key)
+           :endpoint "http://dynamodb.eu-west-1.amazonaws.com"})
 
 (defn- get-body [req]
   (cheshire/parse-string (slurp (:body req)) true))
@@ -18,7 +19,7 @@
         id (.toString (java.util.UUID/randomUUID))
         email (:email body)
         time (System/currentTimeMillis)]
-    (rotary/put-item cred "ingress-waiting" {:id id :email email :time time})))
+    (rotary/put-item cred "ingress-waiting" {"id" id "email" email "time" time})))
 
 (compojure/defroutes handler
   (compojure/POST "/hopeful/" [:as request]
